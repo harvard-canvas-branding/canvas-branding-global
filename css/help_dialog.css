@@ -1,0 +1,12 @@
+#help-dialog li a[href="#create_ticket"] span[class="text"] {
+     display: none !important;
+}
+
+#help-dialog li a[href="#create_ticket"] span[class="subtext"]:before {
+     content: '24x7 Canvas Support';
+     color: #1e7eca;
+     font-size: 1.1em;
+     font-style: normal;
+         display: block;
+     line-height: 20px;
+}
