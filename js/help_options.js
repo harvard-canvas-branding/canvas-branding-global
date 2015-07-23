@@ -5,24 +5,14 @@
 */
 var menuOptions = [
     {
-        "text" : "Your instructor's assistance",
-        "subtext" : "Ask your instructor about the curriculum or assignments",
+        "text" : "Course-related questions",
+        "subtext" : "Ask the teaching staff of your course(s) for assistance",
         "url": "#teacher_feedback"
     },
     {
         "text" : "Canvas support from Harvard ",
-        "subtext" : "Email your local academic support",
+        "subtext" : "Email your local academic support staff",
         "url": "http://bit.ly/18o14Fn"
-    },
-    {
-        "text" : "Canvas 24x7 email support",
-        "subtext" : "Email Canvas for a quick reply",
-        "url": "#create_ticket"
-    },
-    {
-        "text" : "Canvas 24x7 hotline",
-        "subtext" : "Call Canvas at 1-844-326-4466 for immediate support",
-        "url": "#"
     },
     {
         "text" : "Canvas 24x7 chat",
@@ -30,7 +20,17 @@ var menuOptions = [
         "url": "https://secure.livechatinc.com/licence/2695732/open_chat.cgi?groups=149"
     },
     {
-        "text" : "Canvas User Guide documentation",
+        "text" : "Canvas 24x7 email support",
+        "subtext" : "Email Canvas Support for a quick reply",
+        "url": "#create_ticket"
+    },
+    {
+        "text" : "Canvas 24x7 hotline",
+        "subtext" : "Call Canvas Support at 1-844-326-4466 for immediate assistance",
+        "url": "#"
+    },
+    {
+        "text" : "Canvas Guides",
         "subtext" : "Find answers to common questions",
         "url": "https://community.canvaslms.com/community/answers/guides/"
     },
