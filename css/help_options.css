@@ -5,10 +5,6 @@
 
 /* hide the menu until the new options have been added */
 
-#ui-id-2 {
-    display: none;
-}
-
 #help-dialog #help-dialog-options{
     background:#f3f4f5;
 }
