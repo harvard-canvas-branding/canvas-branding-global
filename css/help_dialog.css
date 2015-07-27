@@ -1,12 +1,5 @@
-#help-dialog li a[href="#create_ticket"] span[class="text"] {
-     display: none !important;
+/* hide the help menu - Note it will be un-hidden by javascript */
+#ui-id-2 {
+	display: none;
 }
 
-#help-dialog li a[href="#create_ticket"] span[class="subtext"]:before {
-     content: '24x7 Canvas Support';
-     color: #1e7eca;
-     font-size: 1.1em;
-     font-style: normal;
-         display: block;
-     line-height: 20px;
-}
