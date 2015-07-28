@@ -68,7 +68,7 @@ function initHelpMenu(){
             if ($target.find('#help-dialog-options').length != 0) {
                 $('#help-dialog-options').empty();
                 addNewHelpItems(menuOptions);
-                $('#ui-id-2').css('display', 'block');
+                $('#help-dialog-options').css('display', 'block');
             }
         });
     });
