@@ -1,11 +1,10 @@
 /*
     new styles for help menu options
-    On canvas.icommons these have been added to harvard.css
 */
 
-/* hide the menu until the new options have been added */
-
-#ui-id-2 {
+/* hide the menu options until the new options have 
+   been added via javascript */
+#help-dialog-options {
     display: none;
 }
 
@@ -22,3 +21,5 @@
 }
 
 /* end help menu options */
+
+
