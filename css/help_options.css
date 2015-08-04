@@ -1,0 +1,25 @@
+/*
+    new styles for help menu options
+*/
+
+/* hide the menu options until the new options have 
+   been added via javascript */
+#help-dialog-options {
+    display: none;
+}
+
+#help-dialog #help-dialog-options{
+    background:#f3f4f5;
+}
+
+#help-dialog #help-dialog-options li a .text{
+    color:#1967aa;
+}
+
+#help-dialog #help-dialog-options li a .subtext{
+    color:#666666;
+}
+
+/* end help menu options */
+
+

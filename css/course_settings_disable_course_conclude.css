@@ -1,0 +1,10 @@
+#right-side a.conclude_course_link p {
+  border-top: solid 1px #cccccc;
+  margin-bottom: -.2em;
+  margin-top: .7em;
+  padding-top: .3em;
+}
+
+#right-side a.conclude_course_link em {
+  line-height: 1.2em;
+}
