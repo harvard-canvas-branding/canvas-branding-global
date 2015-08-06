@@ -27,7 +27,7 @@ var menuOptions = [
     {
         "text" : "Canvas 24x7 hotline",
         "subtext" : "Call Canvas Support at 1-844-326-4466 for immediate assistance",
-        "url": "#"
+        "url": "tel:844-326-4466"
     },
     {
         "text" : "Canvas Guides",
