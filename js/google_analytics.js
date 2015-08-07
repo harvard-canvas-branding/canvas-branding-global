@@ -4,7 +4,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-49649810-4', 'auto');
-if (typeof ENV !=== 'undefined') {
-  ga('set', 'dimension1', ENV.COURSE_ID);  
+if (typeof ENV !== 'undefined') {
+  ga('set', 'dimension1', ENV.COURSE_ID);
 }
 ga('send', 'pageview');
