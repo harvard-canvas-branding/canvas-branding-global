@@ -12,12 +12,27 @@
     background:#f3f4f5;
 }
 
-#help-dialog #help-dialog-options li a .text{
-    color:#1967aa;
+#help-dialog #help-dialog-options li span.info {
+    display: block;
+    border-top: 1px solid #fafafa;
+    border-bottom: 1px solid #d4d5d7;
+    padding: 10px 25px;
+    text-decoration: none;
 }
 
-#help-dialog #help-dialog-options li a .subtext{
+#help-dialog #help-dialog-options li a .text,
+#help-dialog #help-dialog-options li span.info .text {
+    color:#1967aa;
+    font-size: 1.1em;
+}
+
+#help-dialog #help-dialog-options li a .subtext,
+#help-dialog #help-dialog-options li span.info .subtext {
     color:#666666;
+    font-style: italic;
+    display: block;
+    font-size: 0.9em;
+    line-height: 1.1em;
 }
 
 /* end help menu options */
