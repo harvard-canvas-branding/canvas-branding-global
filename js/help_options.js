@@ -27,7 +27,6 @@ var menuOptions = [
     {
         "text" : "Canvas 24x7 hotline",
         "subtext" : "Call Canvas Support at 1-844-326-4466 for immediate assistance",
-        "url": "tel:844-326-4466"
     },
     {
         "text" : "Canvas Guides",
@@ -42,15 +41,26 @@ var menuOptions = [
 function addNewHelpItems(menuOptions){
 
     $.each(menuOptions, function(idx, obj) {
-        $('#help-dialog-options').append(
-            $('<li>').append(
-                $('<a>')
-                    .attr('href',obj.url)
-                    .attr('target', '_blank')
-                    .append($('<span>').attr('class', 'text').append(obj.text))
-                    .append($('<span>').attr('class', 'subtext').append(obj.subtext))
-            )
-        );
+        if (obj.url) {
+            $('#help-dialog-options').append(
+                $('<li>').append(
+                    $('<a>')
+                        .attr('href', obj.url)
+                        .attr('target', '_blank')
+                        .append($('<span>').attr('class', 'text').append(obj.text))
+                        .append($('<span>').attr('class', 'subtext').append(obj.subtext))
+                )
+            );
+        } else {
+            $('#help-dialog-options').append(
+                $('<li>').append(
+                    $('<span>')
+                        .attr('class', 'info')
+                        .append($('<span>').attr('class', 'text').append(obj.text))
+                        .append($('<span>').attr('class', 'subtext').append(obj.subtext))
+                )
+            );
+        }
     });
 }
 
