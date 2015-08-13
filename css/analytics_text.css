@@ -1,6 +1,8 @@
 #guidance_text {
+  	font-weight: bold;
     margin: auto;
-    width: 60%;
-    border:3px solid #8AC007;
+    width: 50%;
     padding: 10px;
+  	background-color: #d9edf7;
+  	margin-bottom: 1em;
 }
