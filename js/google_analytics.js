@@ -8,13 +8,13 @@ try {
   if (typeof ENV !== 'undefined') {
     ga('set', 'dimension1', ENV.COURSE_ID);
 
-    if ( ENV.current_user_roles.indexOf('admin') ) {
+    if ( ENV.current_user_roles.indexOf('admin') != -1 ) {
       ga('set', 'dimension2', 'admin');
     }
-    else if ( ENV.current_user_roles.indexOf('teacher') ) {
+    else if ( ENV.current_user_roles.indexOf('teacher') != -1 ) {
       ga('set', 'dimension2', 'teacher');
     }
-    else if ( ENV.current_user_roles.indexOf('student') ) {
+    else if ( ENV.current_user_roles.indexOf('student') != -1 ) {
       ga('set', 'dimension2', 'student');
     }
     else {
@@ -25,4 +25,6 @@ try {
 catch(err) {
   // do nothing
 }
+
+
 ga('send', 'pageview');
