@@ -1,5 +1,5 @@
 
-$(function(){
+function addAnalyticsTextBlock() {
 	// get the name of the current page
 	var p = window.location.pathname.split("/");
 	var filename = p[p.length - 1];
@@ -19,7 +19,31 @@ $(function(){
 		$('.course_graphs').before(guidance_text);
 
 	}
-});
+}
 
 
+function initAnalyticsTextBlock(){
 
+    MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+    var helpMenuObserver = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+            var $target = $(mutation.target);
+			console.log($target.html());
+            //if ($target.find('.course_graphs').length != 0) {
+
+            //}
+        });
+    });
+
+    var $config = {
+        childList: true,
+        subtree: true,
+        attributes: false,
+        characterData: false,
+    };
+
+    helpMenuObserver.observe(document.body, $config);
+
+}
+
+$(document).ready(initAnalyticsTextBlock);
