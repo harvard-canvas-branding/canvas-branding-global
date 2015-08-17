@@ -1,5 +1,5 @@
 
-$(document).ready(function() {
+//$(document).ready(function() {
     var p = window.location.pathname.split("/");
     var filename = p[p.length-1];
 
@@ -16,5 +16,5 @@ $(document).ready(function() {
         $('.course_graphs').before(guidance_text);
 
     }
-});
+//});
 
