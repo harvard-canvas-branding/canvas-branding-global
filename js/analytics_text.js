@@ -28,10 +28,9 @@ function initAnalyticsTextBlock(){
     var helpMenuObserver = new MutationObserver(function (mutations) {
         mutations.forEach(function (mutation) {
             var $target = $(mutation.target);
-			console.log($target.html());
-            //if ($target.find('.course_graphs').length != 0) {
-
-            //}
+            if ($target.find('.course_graphs').length != 0) {
+				console.log($target.html());
+            }
         });
     });
 
