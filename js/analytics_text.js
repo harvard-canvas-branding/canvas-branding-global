@@ -18,4 +18,4 @@ function addAnalyticsText() {
 	}
 }
 
-$(document).ready(addAnalyticsText);
+;$(document).ready(addAnalyticsText);
