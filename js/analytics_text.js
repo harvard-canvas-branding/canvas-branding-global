@@ -1,8 +1,7 @@
 
-//$(document).ready(function() {
     var p = window.location.pathname.split("/");
     var filename = p[p.length-1];
-	console.log('filename:' + filename);
+
     if(filename == "analytics") {
 
         var guidance_text = '<div class="center-alert-info">' +
@@ -16,5 +15,5 @@
         $('.course_graphs').before(guidance_text);
 
     }
-//});
+
 
