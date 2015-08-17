@@ -27,10 +27,12 @@ function initAnalyticsTextBlock(){
     MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
     var helpMenuObserver = new MutationObserver(function (mutations) {
         mutations.forEach(function (mutation) {
-            var $target = $(mutation.target);
+
+			var $target = $(mutation.target);
             if ($target.find('.course_graphs').length != 0) {
 				console.log($target.html());
             }
+
         });
     });
 
