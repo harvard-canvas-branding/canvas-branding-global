@@ -25,14 +25,15 @@ function addAnalyticsTextBlock() {
 function initAnalyticsTextBlock(){
 
     MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
-    var helpMenuObserver = new MutationObserver(function (mutations) {
+    var analyticsObserver = new MutationObserver(function (mutations) {
         mutations.forEach(function (mutation) {
 
 			var $target = $(mutation.target);
-            if ($target.find('.course_graphs').length != 0) {
-				console.log($target.html());
-            }
 
+			if ($('#analytics_body').length != 0 && $target.find('.course_graphs').length != 0) {
+
+				addAnalyticsTextBlock();
+            }
         });
     });
 
@@ -43,7 +44,7 @@ function initAnalyticsTextBlock(){
         characterData: false,
     };
 
-    helpMenuObserver.observe(document.body, $config);
+    analyticsObserver.observe(document.body, $config);
 
 }
 
