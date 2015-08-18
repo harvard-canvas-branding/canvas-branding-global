@@ -32,7 +32,8 @@ function initAnalyticsTextBlock(){
 
 			if ($target.find('.course_graphs').length != 0) {
 
-				addAnalyticsTextBlock();
+				//addAnalyticsTextBlock();
+				console.log(target.html());
             }
         });
     });
