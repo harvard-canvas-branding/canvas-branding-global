@@ -30,10 +30,10 @@ function initAnalyticsTextBlock(){
 
 			var $target = $(mutation.target);
 
-			if ($target.find('.course_graphs').length != 0) {
+			if ($target.find('div.course_graphs').length != 0) {
 
 				//addAnalyticsTextBlock();
-				console.log($target.html());
+				console.log(mutation);
             }
         });
     });
