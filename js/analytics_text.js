@@ -28,13 +28,17 @@ function initAnalyticsTextBlock(){
     var analyticsObserver = new MutationObserver(function (mutations) {
         mutations.forEach(function (mutation) {
 
-			var $target = $(mutation.target);
+			if( $('.center-alert-info').length == 0) {
 
-			if ($target.find('div.course_graphs').length != 0) {
+				var $target = $(mutation.target);
 
-				//addAnalyticsTextBlock();
-				console.log(mutation);
-            }
+				if ($target.find('.course_graphs').length != 0) {
+
+					addAnalyticsTextBlock();
+					//console.log(mutation);
+				}
+
+			}
         });
     });
 
