@@ -1,7 +1,7 @@
 
 /* CSS for text block on analytics page */
 
-#center-alert-info-id {
+.center-alert-info {
 
      width: 100%;
 
@@ -10,7 +10,7 @@
      display: inline-block;
 }
 
-#alert-info-id {
+.alert-info {
 
      background-image: -webkit-linear-gradient(top, #d9edf7 0%, #b9def0 100%);
 
