@@ -30,7 +30,7 @@ function initAnalyticsTextBlock(){
 
 			var $target = $(mutation.target);
 
-			if ($('#analytics_body').length != 0 && $target.find('.course_graphs').length != 0) {
+			if ($target.find('.course_graphs').length != 0) {
 
 				addAnalyticsTextBlock();
             }
