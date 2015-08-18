@@ -6,8 +6,8 @@ function addAnalyticsTextBlock() {
 
 	// if we are on the analytics page display the analytics text block
 	if (resource == "analytics") {
-		var guidance_text = '<div class="center-alert-info">' +
-			'	<div class="alert-info">' +
+		var guidance_text = '<div id="center-alert-info-id">' +
+			'	<div id="alert-info-id">' +
 			'		The Faculty Oversight Committee on the Access to Electronic Information provides' +
 			' 		<a href="https://wiki.harvard.edu/confluence/display/canvas/Electronic+Information+in+Canvas" target="_blank">' +
 			' 		<strong>guidance to faculty</strong></a> on using these analytics.' +
@@ -27,12 +27,14 @@ function initAnalyticsTextBlock(){
 	var analyticsObserver = new MutationObserver(function (mutations) {
 		mutations.forEach(function (mutation) {
 			// check to see if the text block has already been added
-			if( $('.center-alert-info').length == 0) {
+			if( $('#center-alert-info').length == 0) {
 				var $target = $(mutation.target);
 				// if the course_graphs class exists, the analytics have been loaded
 				// so go ahead and add the text block
 				if ($target.find('.course_graphs').length != 0) {
 					addAnalyticsTextBlock();
+					// remove the observer once we have added the block
+					analyticsObserver.disconnect();
 				}
 			}
 		});
