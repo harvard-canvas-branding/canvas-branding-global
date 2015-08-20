@@ -12,7 +12,7 @@
     background:#f3f4f5;
 }
 
-#help-dialog #help-dialog-options li span.info {
+#help-dialog #help-dialog-options li span.info-no-url {
     display: block;
     border-top: 1px solid #fafafa;
     border-bottom: 1px solid #d4d5d7;
@@ -21,13 +21,13 @@
 }
 
 #help-dialog #help-dialog-options li a .text,
-#help-dialog #help-dialog-options li span.info .text {
+#help-dialog #help-dialog-options li span.info-no-url .text {
     color:#1967aa;
     font-size: 1.1em;
 }
 
 #help-dialog #help-dialog-options li a .subtext,
-#help-dialog #help-dialog-options li span.info .subtext {
+#help-dialog #help-dialog-options li span.info-no-url .subtext {
     color:#666666;
     font-style: italic;
     display: block;
