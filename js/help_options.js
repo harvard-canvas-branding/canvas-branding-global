@@ -55,7 +55,7 @@ function addNewHelpItems(menuOptions){
             $('#help-dialog-options').append(
                 $('<li>').append(
                     $('<span>')
-                        .attr('class', 'info')
+                        .attr('class', 'info-no-url')
                         .append($('<span>').attr('class', 'text').append(obj.text))
                         .append($('<span>').attr('class', 'subtext').append(obj.subtext))
                 )
