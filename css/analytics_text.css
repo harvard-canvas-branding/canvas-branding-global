@@ -1,13 +1,17 @@
 
-/* CSS for text block on analytics page */
+/* CSS for text block on analytics page
 
-.center-alert-info {
+named using tlt-analytics as a prefix to avoid clashing with Canvas styles.
+
+*/
+
+.tlt-analytics-center-alert-info {
      width: 100%;
      text-align: center;
      display: inline-block;
 }
 
-.alert-info {
+.tlt-analytics-alert-info {
      background-image: -webkit-linear-gradient(top, #d9edf7 0%, #b9def0 100%);
      background-image: -o-linear-gradient(top, #d9edf7 0%, #b9def0 100%);
      background-image: -webkit-gradient(linear, left top, left bottom, from(#d9edf7), to(#b9def0));
