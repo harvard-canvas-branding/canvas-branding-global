@@ -6,8 +6,8 @@ function addAnalyticsTextBlock() {
 
 	// if we are on the analytics page display the analytics text block
 	if (resource == "analytics") {
-		var guidance_text = '<div id="analytics-guidance" class="center-alert-info">' +
-			'	<div class="alert-info">' +
+		var guidance_text = '<div id="analytics-guidance" class="tlt-analytics-center-alert-info">' +
+			'	<div class="tlt-analytics-alert-info">' +
 			'		The Faculty Oversight Committee on the Access to Electronic Information provides' +
 			' 		<a href="https://wiki.harvard.edu/confluence/display/canvas/Electronic+Information+in+Canvas" target="_blank">' +
 			' 		<strong>guidance to faculty</strong></a> on using these analytics.' +
