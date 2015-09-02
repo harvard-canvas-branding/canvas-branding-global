@@ -7,12 +7,12 @@ var huToolVisibilityRestricted = [
 ];
 
 function huFuzzyVisUpdate(tool){
-  return $("a[class^='context_external_tool']:contains('"+ tool + "')")
+  return $("div[id='left-side'] a[class^='context_external_tool']:contains('"+ tool + "')")
     .parent().addClass('section-tab-hidden');
 }
 
 function huExactVisUpdate(tool){
-  return $("a[class^='context_external_tool']")
+  return $("div[id='left-side'] a[class^='context_external_tool']")
     .filter(function(){ return $(this).text() === tool })
     .parent().addClass('section-tab-hidden');
 }
