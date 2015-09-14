@@ -1,6 +1,7 @@
 // source: TLT Canvas Liaison FAQ
 var huToolVisibilityRestricted = [
   // Course-level
+  "A/B Testing Tool",
   "Manage People",
   "Manage Sections",
   "Course Emailer"
