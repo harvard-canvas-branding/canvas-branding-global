@@ -10,14 +10,33 @@ function addCourseConcludeDateDisabledMessage() {
   $('#course_conclude_at').closest('tr').find('div.aside').after('<p><em>' + msg + '</em></p>');
 }
 
+function addCourseUnconcludeButtonDisabledMessage() {
+  var msg = '(Please contact your local academic support staff to un-conclude this course)'
+  var $unconcludeButton = $("form[action$='unconclude']").find('button');
+  $unconcludeButton.addClass('unconclude_course_link');
+  $unconcludeButton.append('<p><em>' + msg + '</em></p>');
+}
+
 function disableCourseConcludeButton() {
   var $concludeButton = $("a[class~='btn'][href$='event=conclude']");
   $concludeButton.attr('disabled', true);
 }
 
+function disableCourseUnconcludeButton() {
+  var $unconcludeButton = $("form[action$='unconclude']").find('button');
+  $unconcludeButton.attr('disabled', true);
+}
+
 function disableCourseConcludeDate() {
   var $concludeDateUIComponents = $('#course_conclude_at').closest('tr').find('div, i, input, button');
   $concludeDateUIComponents.addClass("selection-disabled").attr("disabled", true);
+}
+
+function isConcludeButtonPresent(){
+    $concludeBtn =$("a[class~='btn'][href$='event=conclude']");
+    if ($concludeBtn.length > 0 )
+        return true;
+    return false;
 }
 
 function initHUGlobal() {
@@ -26,8 +45,13 @@ function initHUGlobal() {
   var onCourseSettingsPage = (windowUrl.search(reCourseSettingsPage) != -1);
 
   if (onCourseSettingsPage) {
-    disableCourseConcludeButton();
-    addCourseConcludeButtonDisabledMessage();
+    if (isConcludeButtonPresent()) {
+        disableCourseConcludeButton();
+        addCourseConcludeButtonDisabledMessage();
+    }else {
+        disableCourseUnconcludeButton();
+        addCourseUnconcludeButtonDisabledMessage();
+    }
 
     // datepicker is not always available on document.ready(), and doesn't
     // trigger mutations when added to DOM, so we have to track when it gets
