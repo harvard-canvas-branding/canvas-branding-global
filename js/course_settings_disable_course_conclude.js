@@ -43,9 +43,10 @@ function initHUGlobal() {
       })
     });
 
-    var $courseConcludeAt = $('#course_conclude_at');
-    if ($courseConcludeAt) {
-      classAttrObserver.observe($courseConcludeAt.get(0), {
+    // content is the closest parent that's reliably availble on document.ready()
+    var $content = $('#content');
+    if ($content.length > 0) {
+      classAttrObserver.observe($content.get(0), {
         childList: false,
         subtree: false,
         attributes: true,
