@@ -9,7 +9,7 @@ function disableCourseResetButton(){
   $('.reset_course_content_button').removeAttr("href").addClass('disabled');
 }
 
-function initHUGlobal() {
+function initDisableCourseReset() {
   var reCourseSettingsPage = /courses\/.+?\/settings/;
   var windowUrl = window.location.pathname;
   var onCourseSettingsPage = (windowUrl.search(reCourseSettingsPage) != -1);
@@ -21,4 +21,4 @@ function initHUGlobal() {
   }
 }
 
-$(document).ready(initHUGlobal);
+$(document).ready(initDisableCourseReset);
