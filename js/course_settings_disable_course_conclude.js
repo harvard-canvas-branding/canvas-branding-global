@@ -7,7 +7,9 @@ function addCourseConcludeButtonDisabledMessage() {
 
 function addCourseConcludeDateDisabledMessage() {
   var msg = '(Please contact your local academic support staff to change the course conclude date)';
-  $('#course_conclude_at').closest('tr').find('div.aside').after('<p><em>' + msg + '</em></p>');
+  if ( $('#course_conclude_at').closest('tr').find('p').length == 0 ) {
+    $('#course_conclude_at').closest('tr').find('div.aside').after('<p><em>' + msg + '</em></p>');
+  }
 }
 
 function addCourseUnconcludeButtonDisabledMessage() {
@@ -53,7 +55,7 @@ function initHUGlobal() {
         addCourseUnconcludeButtonDisabledMessage();
     }
     
-    addCourseConcludeDateDisabledMessage();
+
 
     // datepicker is not always available on document.ready(), and doesn't
     // trigger mutations when added to DOM, so we have to track when it gets
@@ -64,6 +66,8 @@ function initHUGlobal() {
         if ($target.not('.datepickerDisabled').hasClass('hasDatepicker')) {
           $target.addClass('datepickerDisabled');
           disableCourseConcludeDate();
+          addCourseConcludeDateDisabledMessage();
+          classAttrObserver.disconnect();
         }
       })
     });
