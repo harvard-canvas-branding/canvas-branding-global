@@ -1,8 +1,6 @@
 function isResetCourseButtonPresent(){
     $resetBtn =$('.reset_course_content_button');
-    if ($resetBtn.length > 0 )
-        return true;
-    return false;
+    return $resetBtn.length > 0;
 }
 
 function disableCourseResetButton(){
@@ -16,27 +14,6 @@ function initDisableCourseReset() {
 
   if (onCourseSettingsPage && isResetCourseButtonPresent()) {
     disableCourseResetButton();
-
-    var classAttrObserver = new MutationObserver(function (mutations) {
-      mutations.forEach(function (mutation) {
-        $target = mutation.target;
-        if($target.find("a.reset_course_content_button").length > 0) {
-          console.log(mutation.type);
-          console.log(mutation.target);
-        }
-      })
-    });
-
-    // content is the closest parent that's reliably availble on document.ready()
-    var $content = $('body');
-    if ($content.length > 0) {
-      classAttrObserver.observe($content.get(0), {
-        childList: true,
-        subtree: true,
-        attributes: true,
-        characterData: false
-      });
-    }
   }
 }
 
