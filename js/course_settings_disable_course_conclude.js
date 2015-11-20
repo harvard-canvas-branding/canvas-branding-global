@@ -74,8 +74,8 @@ function initHUGlobal() {
     if ($content.length > 0) {
       classAttrObserver.observe($content.get(0), {
         childList: true,
-        subtree: false,
-        attributes: true,
+        subtree: true,
+        attributes: false,
         characterData: false,
         attributeFilter: ['class']
       });
