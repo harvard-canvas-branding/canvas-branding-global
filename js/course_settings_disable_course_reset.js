@@ -19,8 +19,11 @@ function initDisableCourseReset() {
 
     var classAttrObserver = new MutationObserver(function (mutations) {
       mutations.forEach(function (mutation) {
-        console.log(mutation.type);
-        console.log(mutation.target);
+        $target = mutation.target;
+        if($target.find("a.reset_course_content_button").length > 0) {
+          console.log(mutation.type);
+          console.log(mutation.target);
+        }
       })
     });
 
