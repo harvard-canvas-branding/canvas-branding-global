@@ -67,6 +67,7 @@ function initHUGlobal() {
           $target.addClass('datepickerDisabled');
           disableCourseConcludeDate();
           addCourseConcludeDateDisabledMessage();
+          classAttrObserver.disconnect();
         }
       })
     });
