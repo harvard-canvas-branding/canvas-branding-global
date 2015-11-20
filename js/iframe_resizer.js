@@ -1,11 +1,7 @@
 ;((function() {
 
-  function inPath(substring) {
-    return window.location.pathname.indexOf(substring) > -1;
-  }
-
   function onEditablePage() {
-    return (inPath('syllabus') || inPath('pages'));
+    return ($('body').hasClass('syllabus') || $('body').hasClass('pages'));
   }
 
   // If we're on a page with the course info iframe, set up bidirectional
