@@ -53,7 +53,7 @@ function initHUGlobal() {
         addCourseUnconcludeButtonDisabledMessage();
     }
     
-    addCourseConcludeDateDisabledMessage();
+
 
     // datepicker is not always available on document.ready(), and doesn't
     // trigger mutations when added to DOM, so we have to track when it gets
@@ -64,6 +64,7 @@ function initHUGlobal() {
         if ($target.not('.datepickerDisabled').hasClass('hasDatepicker')) {
           $target.addClass('datepickerDisabled');
           disableCourseConcludeDate();
+          addCourseConcludeDateDisabledMessage();
         }
       })
     });
@@ -72,7 +73,7 @@ function initHUGlobal() {
     var $content = $('#content');
     if ($content.length > 0) {
       classAttrObserver.observe($content.get(0), {
-        childList: true,
+        childList: false,
         subtree: true,
         attributes: true,
         characterData: false,
