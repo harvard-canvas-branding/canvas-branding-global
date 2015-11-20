@@ -7,7 +7,9 @@ function addCourseConcludeButtonDisabledMessage() {
 
 function addCourseConcludeDateDisabledMessage() {
   var msg = '(Please contact your local academic support staff to change the course conclude date)';
-  $('#course_conclude_at').closest('tr').find('div.aside').after('<p><em>' + msg + '</em></p>');
+  if ( ! $('#course_conclude_at').closest('tr').find('p') ) {
+    $('#course_conclude_at').closest('tr').find('div.aside').after('<p><em>' + msg + '</em></p>');
+  }
 }
 
 function addCourseUnconcludeButtonDisabledMessage() {
