@@ -19,7 +19,7 @@ function disableAddCourseButton(){
 function initDisableAddUserCourse() {
   var reAccountPage = /accounts\/.+?\/.+?/;
   var windowUrl = window.location.pathname;
-  var onAccountPage = (windowUrl.search(reAccountSettingsPage) != -1);
+  var onAccountPage = (windowUrl.search(reAccountPage) != -1);
 
   if (onAccountPage) {
     if (isAddUserButtonPresent()) {
