@@ -11,13 +11,13 @@ function isAddCourseButtonPresent(){
 function disableAddUserButton(){
   // remove the href asd well so people can't get the url
   // and try it directly
-  $('#right-side > div.rs-margin-all > a.add_user_link.btn.button-sidebar-wide').removeAttr("href").addClass('disabled');
+  $('#right-side > div.rs-margin-all > a.add_user_link.btn.button-sidebar-wide').removeAttr("href").addClass('disabled').attr('disabled', true);
 }
 
 function disableAddCourseButton(){
   // remove the href asd well so people can't get the url
   // and try it directly
-  $('#right-side > div.rs-margin-all > a.add_course_link.btn.button-sidebar-wide').removeAttr('href').addClass('disabled');
+  $('#right-side > div.rs-margin-all > a.add_course_link.btn.button-sidebar-wide').removeAttr('href').addClass('disabled').attr('disabled', true);
 }
 
 function initDisableAddUserCourse() {
