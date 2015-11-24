@@ -4,8 +4,7 @@ var huToolVisibilityRestricted = [
   "A/B Testing Tool",
   "Manage People",
   "Manage Sections",
-  "Course Emailer",
-  "Import iSites Content"
+  "Course Emailer"
 ];
 
 function huFuzzyVisUpdate(tool){
