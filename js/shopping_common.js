@@ -21,7 +21,7 @@ var tooltip_link = '<a data-tooltip title="' + data_tooltip + '" target="_blank"
 var no_user_canvas_login = '<div class="tltmsg tltmsg-shop"><p class="participate-text">Students: ' +
   '<a href="'+login_url+'">login</a> to get more access during shopping period.' + tooltip_link + '</p></div>';
 
-var is_course = (course_id > 0);
+var course_id_is_valid = (course_id > 0);
 var user_enrolled = false;
 var is_shopper = false;
 var is_teacher = false;
@@ -65,7 +65,7 @@ var on_special_page = on_admin_page || on_speed_grader_page || on_submissions_pa
  * with additional checks to show shopping messages if authorized
  * @type {boolean}
  */
-var is_unauthorized_message_shown = $('#unauthorized_message').length > 0 ? false : true;
+var unauthorized_message_not_shown = $('#unauthorized_message').length > 0 ? false : true;
 
 /**
  *  get the course number for the canvas course
@@ -77,7 +77,7 @@ function get_course_number() {
   var match = pat.exec(page_url);
   if (match) {
     course_id = match[1];
-    return course_id;
+    return parseInt(course_id);
   }
   return 0;
 }
