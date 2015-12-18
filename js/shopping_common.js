@@ -36,6 +36,15 @@ function get_sis_user_id(canvas_user_api_data) {
 }
 
 /**
+ * Check if the course workflow state is 'available'
+ * @param course_workflow
+ * @returns {boolean}
+ */
+function is_course_available(course_workflow) {
+  return course_workflow.localeCompare('available') == 0;
+}
+
+/**
  * Get the banner text for students and guests
  * @returns {string} student_message_text
  */
