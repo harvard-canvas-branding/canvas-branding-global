@@ -21,12 +21,6 @@ var tooltip_link = '<a data-tooltip title="' + data_tooltip + '" target="_blank"
 var no_user_canvas_login = '<div class="tltmsg tltmsg-shop"><p class="participate-text">Students: ' +
   '<a href="'+login_url+'">login</a> to get more access during shopping period.' + tooltip_link + '</p></div>';
 
-var course_id_is_valid = (course_id > 0);
-var user_enrolled = false;
-var is_shopper = false;
-var is_teacher = false;
-var is_student = false;
-
 /**
  * Create the div that will hold the shoping banner
  * @type {html element}
@@ -59,13 +53,6 @@ var on_submissions_page = ((window.location.pathname).indexOf('submissions') != 
  * @type {boolean}
  */
 var on_special_page = on_admin_page || on_speed_grader_page || on_submissions_page;
-
-/**
- * check to see if the '#unauthorized_message' is being rendered  and only proceed
- * with additional checks to show shopping messages if authorized
- * @type {boolean}
- */
-var unauthorized_message_not_shown = $('#unauthorized_message').length > 0 ? false : true;
 
 /**
  *  get the course number for the canvas course
@@ -163,7 +150,7 @@ function shopping_get_viewer_banner_text(add_shopper_url) {
  * Get the banner text for teachers
  * @returns {string} shopping_is_active_message
  */
-function shopping_get_is_active_banner_text() {
+function shopping_get_teacher_banner_text() {
   var shopping_is_active_message = '<h1>Your current class list may include Shoppers. ' + tooltip_link +
     '</h1><p>All Harvard ID holders can view this course site during shopping period. Students ' +
     'can choose to add themselves as Shoppers to participate in discussions, upload assignments, watch ' +
