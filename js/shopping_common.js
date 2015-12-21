@@ -1,25 +1,3 @@
-/**
- * Common shopping code
- */
-
-var current_user_id = ENV['current_user_id'];
-var user_url = '/api/v1/users/' + current_user_id + '/profile';
-var course_id = get_course_number();
-var course_url = '/api/v1/courses/' + course_id ;
-var login_url = window.location.origin+"/login";
-var shopping_tool_url = "https://icommons-tools.dev.tlt.harvard.edu/shopping";
-
-/**
- * Tool tip text and html link
- * @type {string}
- */
-var shopping_help_doc_url = 'https://wiki.harvard.edu/confluence/display/canvas/Course+Shopping';
-var data_tooltip = 'More info about access during shopping period';
-var tooltip_link = '<a data-tooltip title="' + data_tooltip + '" target="_blank" href="' +
-  shopping_help_doc_url + '"><i class="icon-question"></i></a>';
-
-var no_user_canvas_login = '<div class="tltmsg tltmsg-shop"><p class="participate-text">Students: ' +
-  '<a href="'+login_url+'">login</a> to get more access during shopping period.' + tooltip_link + '</p></div>';
 
 /**
  * Create the div that will hold the shoping banner
@@ -160,3 +138,27 @@ function shopping_get_teacher_banner_text() {
     'course through the Registrar’s office will be removed from the class list.</p>';
   return shopping_is_active_message;
 }
+
+/**
+ * Common shopping code
+ */
+
+var current_user_id = ENV['current_user_id'];
+var user_url = '/api/v1/users/' + current_user_id + '/profile';
+var course_id = get_course_number();
+var course_url = '/api/v1/courses/' + course_id;
+var login_url = window.location.origin+"/login";
+var shopping_tool_url = "https://icommons-tools.dev.tlt.harvard.edu/shopping";
+
+/**
+ * Tool tip text and html link
+ * @type {string}
+ */
+var shopping_help_doc_url = 'https://wiki.harvard.edu/confluence/display/canvas/Course+Shopping';
+var data_tooltip = 'More info about access during shopping period';
+var tooltip_link = '<a data-tooltip title="' + data_tooltip + '" target="_blank" href="' +
+  shopping_help_doc_url + '"><i class="icon-question"></i></a>';
+
+var no_user_canvas_login = '<div class="tltmsg tltmsg-shop"><p class="participate-text">Students: ' +
+  '<a href="'+login_url+'">login</a> to get more access during shopping period.' + tooltip_link + '</p></div>';
+
