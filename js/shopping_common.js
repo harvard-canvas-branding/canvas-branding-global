@@ -148,7 +148,13 @@ var user_url = '/api/v1/users/' + current_user_id + '/profile';
 var course_id = get_course_number();
 var course_url = '/api/v1/courses/' + course_id;
 var login_url = window.location.origin+"/login";
-var shopping_tool_url = "https://icommons-tools.dev.tlt.harvard.edu/shopping";
+
+/**
+ * dev tool shopping url
+ * var shopping_tool_url = "https://icommons-tools.dev.tlt.harvard.edu/shopping";
+ */
+
+var shopping_tool_url = "https://icommons-tools.tlt.harvard.edu/shopping";
 
 /**
  * Tool tip text and html link
