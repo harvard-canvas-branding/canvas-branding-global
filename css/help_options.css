@@ -24,6 +24,7 @@
 #help-dialog #help-dialog-options li span.info-no-url .text {
     color:#1967aa;
     font-size: 1.1em;
+    font-weight: bold;
 }
 
 #help-dialog #help-dialog-options li a .subtext,
