@@ -8,30 +8,31 @@
     display: none;
 }
 
-#help-dialog #help-dialog-options{
-    background:#f3f4f5;
-}
+/* the following styles override default canvas styles as well for consistency
+   if any changes are made on the canvas side */
 
-#help-dialog #help-dialog-options li span.info-no-url {
-    display: block;
-    border-top: 1px solid #fafafa;
+/* mirrors existing #help-dialog #help-dialog-options li a */
+#help-dialog #help-dialog-options li a,  /* canvas default */
+#help-dialog #help-dialog-options li span.info-no-url {  /* custom */
     border-bottom: 1px solid #d4d5d7;
+    border-top: 1px solid #fafafa;
+    display: block;
     padding: 10px 25px;
     text-decoration: none;
 }
 
-#help-dialog #help-dialog-options li a .text,
-#help-dialog #help-dialog-options li span.info-no-url .text {
-    color:#1967aa;
+#help-dialog #help-dialog-options li a .text,  /* canvas default */
+#help-dialog #help-dialog-options li span.info-no-url .text {  /* custom */
+    color: #1e7eca;
     font-size: 1.1em;
 }
 
-#help-dialog #help-dialog-options li a .subtext,
-#help-dialog #help-dialog-options li span.info-no-url .subtext {
+#help-dialog #help-dialog-options li a .subtext,  /* canvas default */
+#help-dialog #help-dialog-options li span.info-no-url .subtext {  /* custom */
     color:#666666;
-    font-style: italic;
     display: block;
     font-size: 0.9em;
+    font-style: italic;
     line-height: 1.1em;
 }
 
