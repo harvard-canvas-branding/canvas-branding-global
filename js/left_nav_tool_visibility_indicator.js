@@ -3,6 +3,8 @@ var huToolVisibilityRestricted = [
   // Course-level
   "A/B Testing Tool",
   "Course Emailer",
+  "Manage People",
+  "Manage Sections",
   "Import iSites Content",
   "Manage Course",
 ];
