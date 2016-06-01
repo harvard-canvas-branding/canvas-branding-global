@@ -1,39 +1,33 @@
 /*
-    new styles for help menu options
+    styles for custom help menu options to match existing Canvas help menu
 */
 
-/* hide the menu options until the new options have 
-   been added via javascript */
+/* hide the menu options until the new options have been added via javascript */
 #help-dialog-options {
     display: none;
 }
 
-#help-dialog #help-dialog-options{
-    background:#f3f4f5;
-}
-
-#help-dialog #help-dialog-options li span.info-no-url {
+/* matches #help-dialog #help-dialog-options li a (canvas default) */
+#help-dialog #help-dialog-options li span.info-no-url {  /* custom */
+    border-bottom: 1px solid #d6d6d6;
     display: block;
-    border-top: 1px solid #fafafa;
-    border-bottom: 1px solid #d4d5d7;
-    padding: 10px 12px;
+    padding: 12px;
     text-decoration: none;
+    font-weight: 500;
 }
 
-#help-dialog #help-dialog-options li a .text,
-#help-dialog #help-dialog-options li span.info-no-url .text {
-    color:#1967aa;
-    font-size: 1.1em;
-    font-weight: bold;
+/* matches #help-dialog #help-dialog-options li a .text (canvas default) */
+#help-dialog #help-dialog-options li span.info-no-url .text {  /* custom */
+    color: #0081bd;
 }
 
-#help-dialog #help-dialog-options li a .subtext,
-#help-dialog #help-dialog-options li span.info-no-url .subtext {
-    color:#666666;
-    font-style: italic;
+/* matches #help-dialog #help-dialog-options li a .subtext (canvas default) */
+#help-dialog #help-dialog-options li span.info-no-url .subtext {  /* custom */
+    color: dimgray;
     display: block;
-    font-size: 0.9em;
-    line-height: 1.1em;
+    font-size: 0.75rem;
+    /* font-size: 12px; also specified but overridden by font-size: 0.75rem; */
+    font-weight: 300;
 }
 
 /* end help menu options */

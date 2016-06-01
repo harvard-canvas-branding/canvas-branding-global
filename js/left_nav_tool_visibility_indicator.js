@@ -5,7 +5,8 @@ var huToolVisibilityRestricted = [
   "Manage People",
   "Manage Sections",
   "Course Emailer",
-  "Import iSites Content"
+  "Import iSites Content",
+  "Manage Course",
 ];
 
 function huFuzzyVisUpdate(tool){
