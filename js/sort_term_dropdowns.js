@@ -17,6 +17,9 @@ function sortTermDropdown(){
       if ( a.label.match(re_letter) && b.label.match(re_number) ) {
         return 1;
       }
+      if ( a.label.match(re_number) && b.label.match(re_letter) ) {
+        return -1;
+      }
       return (a.label >= b.label) ? -1 : 1;
   });
   $('select[name="enrollment_term_id"]').html(selectList);
