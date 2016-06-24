@@ -5,24 +5,37 @@ function isTermDropdownPresent(){
 }
 
 function sortTermDropdown(){
-  var selectList = $('select[name="enrollment_term_id"] option');
+  var termSelectList = $('select[name="enrollment_term_id"]');
 
   var re_letter = /^[A-Za-z]/;
   var re_number = /^[0-9]/;
-  selectList.sort(function(a,b){
-      // 'All Terms' at the top; other labels beggining with a letter at the end
-      if (a.label == 'All Terms') {
-        return -1;
-      }
-      if ( a.label.match(re_letter) && b.label.match(re_number) ) {
-        return 1;
-      }
-      if ( a.label.match(re_number) && b.label.match(re_letter) ) {
-        return -1;
-      }
-      return (a.label >= b.label) ? -1 : 1;
+
+  var topList = new Array;
+  var middleList = new Array;
+  var bottomList = new Array;
+
+  for (var i=0; i < termSelectList.options.length; i++) {
+    if (termSelectList.options[i].label == 'All Terms') {
+      topList.push(termSelectList.options[i]);
+    }
+    else if (termSelectList.options[i].label.match(re_letter)) {
+      bottomList.push(termSelectList.options[i]);
+    }
+    else {
+      middleList.push(termSelectList.options[i])
+    }
+  }
+
+  var newList = new Array;
+  newList += topList;
+  newList += middleList.sort(function(a,b){
+    return (a.label >= b.label) ? -1 : 1;
   });
-  $('select[name="enrollment_term_id"]').html(selectList);
+  newList += bottomList.sort(function(a,b){
+    return (a.label >= b.label) ? -1 : 1;
+  });
+
+  $('select[name="enrollment_term_id"]').html(newList);
 }
 
 function initSortTermDropdown() {
