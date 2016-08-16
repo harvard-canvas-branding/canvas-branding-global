@@ -17,7 +17,7 @@ var menuOptions = [
     {
         "text" : "Canvas 24x7 chat",
         "subtext" : "Live chat with Canvas Support",
-        "url": "https://secure.livechatinc.com/licence/2695732/open_chat.cgi?groups=149"
+        "url": "https://cases.canvaslms.com/apex/liveagentchat"
     },
     {
         "text" : "Canvas 24x7 email support",
