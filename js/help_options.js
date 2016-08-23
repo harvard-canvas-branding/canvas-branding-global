@@ -1,11 +1,14 @@
 
 /*
-  Hide the two help menu items that we can't control via the UI
-  Everything else will be controlled via the UI
+  Hide the two help menu items that we can't control via the UI.
+  Change the text of the 'Course-related questions' item.
+  Everything else will be controlled via the UI.
 */
-function removeUnwantedHelpOptions() {
+function cutomizeHelpOptions() {
   $('div#help_tray ul li a:contains(Ask the Community)').parent().hide();
   $('div#help_tray ul li a:contains(Submit a Feature Idea)').parent().hide();
+  $('div#help_tray ul li a:contains(Ask Your Instructor a Question)').text('Course-related questions');
+  $('div#help_tray ul li a:contains(Course-related questions) ~ div').text('Ask the teaching staff of your course(s) for assistance');
 }
 
 /*
@@ -20,7 +23,7 @@ function initHelpMenu(){
         mutations.forEach(function (mutation) {
             var $target = $(mutation.target);
             if ($target.find('#help_tray').length != 0) {
-                removeUnwantedHelpOptions()
+                customizeHelpOptions()
             }
         });
     });
