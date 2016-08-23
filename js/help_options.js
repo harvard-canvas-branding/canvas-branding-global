@@ -24,7 +24,6 @@ function initHelpMenu(){
             var $target = $(mutation.target);
             if ($target.find('#help_tray').length != 0) {
                 customizeHelpOptions()
-                helpMenuObserver.disconnect();
             }
         });
     });
