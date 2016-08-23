@@ -21,9 +21,6 @@ function initHelpMenu(){
             var $target = $(mutation.target);
             if ($target.find('#help_tray').length != 0) {
                 removeUnwantedHelpOptions()
-                // $('#help-dialog-options').empty();
-                // addNewHelpItems(menuOptions);
-                // $('#help-dialog-options').css('display', 'block');
             }
         });
     });
