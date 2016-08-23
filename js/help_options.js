@@ -1,10 +1,10 @@
 
 /*
   Hide the two help menu items that we can't control via the UI.
-  Change the text of the 'Course-related questions' item.
+  Change the text of the 'Ask Your Instructor' item.
   Everything else will be controlled via the UI.
 */
-function cutomizeHelpOptions() {
+function customizeHelpOptions() {
   $('div#help_tray ul li a:contains(Ask the Community)').parent().hide();
   $('div#help_tray ul li a:contains(Submit a Feature Idea)').parent().hide();
   $('div#help_tray ul li a:contains(Ask Your Instructor a Question)').text('Course-related questions');
