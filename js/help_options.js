@@ -9,6 +9,10 @@ function customizeHelpOptions() {
   $('div#help_tray ul li a:contains(Submit a Feature Idea)').parent().hide();
   $('div#help_tray ul li a:contains(Ask Your Instructor a Question)').text('Course-related questions');
   $('div#help_tray ul li a:contains(Course-related questions) ~ div').text('Ask the teaching staff of your course(s) for assistance');
+  $('div#help_tray ul li a:contains(Report a Problem)').text('Canvas 24x7 email support');
+  $('div#help_tray ul li a:contains(Canvas 24x7 email support) ~ div').text('Email Canvas Support for a quick reply');
+
+
 }
 
 /*
