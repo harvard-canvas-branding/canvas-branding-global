@@ -1,23 +1,23 @@
 function isAddUserButtonPresent(){
-    $btn = $('#right-side > div.rs-margin-all > a.add_user_link.btn.button-sidebar-wide');
+    $btn = $('#right-side > div.rs-margin-bottom > a.add_user_link.Button.button-sidebar-wide');
     return $btn.length > 0;
 }
 
 function isAddCourseButtonPresent(){
-    $btn = $('#right-side > div.rs-margin-all > a.add_course_link.btn.button-sidebar-wide');
+    $btn = $('#right-side > div.rs-margin-bottom > a.add_course_link.Button.button-sidebar-wide');
     return $btn.length > 0;
 }
 
 function disableAddUserButton(){
   // remove the href asd well so people can't get the url
   // and try it directly
-  $('#right-side > div.rs-margin-all > a.add_user_link.btn.button-sidebar-wide').removeAttr("href").addClass('disabled');
+  $('#right-side > div.rs-margin-bottom > a.add_user_link.Button.button-sidebar-wide').removeAttr("href").addClass('disabled');
 }
 
 function disableAddCourseButton(){
   // remove the href asd well so people can't get the url
   // and try it directly
-  $('#right-side > div.rs-margin-all > a.add_course_link.btn.button-sidebar-wide').removeAttr('href').addClass('disabled');
+  $('#right-side > div.rs-margin-bottom > a.add_course_link.Button.button-sidebar-wide').removeAttr('href').addClass('disabled');
 }
 
 function initDisableAddUserCourse() {
