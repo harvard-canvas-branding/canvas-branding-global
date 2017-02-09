@@ -13,7 +13,7 @@ function initDisableDashboardStartCourse() {
 
   if ($("body[class*=context-user_]")) {
     if(isStartCourseButtonPresent()){
-      disableStartCourseButton();
+      removeStartCourseButton();
     }
   }
 }
