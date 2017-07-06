@@ -1,6 +1,6 @@
 function addCourseConcludeButtonDisabledMessage() {
   var msg = '(Please contact your local academic support staff to conclude the course)';
-  var $concludeButton = $("a[class~='btn'][href$='event=conclude']");
+  var $concludeButton = $("a[class~='Button'][href$='event=conclude']");
   $concludeButton.addClass('conclude_course_link');
   $concludeButton.append('<p><em>' + msg + '</em></p>');
 }
@@ -20,7 +20,7 @@ function addCourseUnconcludeButtonDisabledMessage() {
 }
 
 function disableCourseConcludeButton() {
-  var $concludeButton = $("a[class~='btn'][href$='event=conclude']");
+  var $concludeButton = $("a[class~='Button'][href$='event=conclude']");
   $concludeButton.attr('disabled', true);
 }
 
@@ -35,7 +35,7 @@ function disableCourseConcludeDate() {
 }
 
 function isConcludeButtonPresent(){
-    $concludeBtn =$("a[class~='btn'][href$='event=conclude']");
+    $concludeBtn =$("a[class~='Button'][href$='event=conclude']");
     if ($concludeBtn.length > 0 )
         return true;
     return false;
