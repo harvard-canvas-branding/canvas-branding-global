@@ -1,4 +1,0 @@
-#hu-autosave-warning {
-    /* override ic-flash-error z-index so #combo_box_container student dropdown isn't overlaid by error msg */
-    z-index: inherit;
-}
