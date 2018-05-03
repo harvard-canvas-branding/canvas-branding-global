@@ -20,3 +20,7 @@ phases:
       - echo Beginning the build phase...
       - cat js/*.js > build/global.js
       - uglifyjs build/global.js > build/global.min.js
+
+  post_build:
+    commands:
+      - cat build/global.min.js
