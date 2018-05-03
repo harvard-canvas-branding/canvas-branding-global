@@ -14,4 +14,4 @@ phases:
     commands:
       - echo Beginning the build phase...
       - cat js/*.js > build/global.js
-      - uglify build/global.js > build/global.min.js
+      - uglifyjs build/global.js > build/global.min.js
