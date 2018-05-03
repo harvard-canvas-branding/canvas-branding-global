@@ -12,8 +12,7 @@ phases:
   install:
     commands:
       - echo Beginning the install phase...
-      - apt-get update -y
-      - apt-get install -y node-uglify
+      - npm install -g uglify-js
       - rm -rf build
       - mkdir build
   build:
