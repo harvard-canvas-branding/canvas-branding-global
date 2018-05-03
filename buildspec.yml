@@ -24,3 +24,9 @@ phases:
   post_build:
     commands:
       - cat build/global.min.js
+
+artifacts:
+  files:
+    - build/global.js
+    - build/global.min.js
+  discard-paths: yes
