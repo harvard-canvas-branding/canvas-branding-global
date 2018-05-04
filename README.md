@@ -1,5 +1,5 @@
 # canvas-branding
-Top-level Canvas branding files.
+Top-level Canvas theme files.
 
 ## Manually building js/css files:
 
