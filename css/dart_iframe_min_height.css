@@ -1,0 +1,18 @@
+/* For learning assets from dart.harvard.edu that are
+   embedded in Canvas modules, ensure that the height
+   of the iframe is never smaller than the maximum
+   height of the iframe source content.
+
+   This code prevents an additional scrollbar from being
+   created when Canvas renders a ExternalURL iframe
+   with a height smaller than 800px.
+
+   For questions about this code, please contact the
+   VPAL Services Team:
+     daniel_seaton@harvard.edu
+     elliott_yates@harvard.edu
+     david_house@harvard.edu
+*/
+iframe#file_content[src*="dart.harvard.edu"] {
+    min-height: 800px;
+}
