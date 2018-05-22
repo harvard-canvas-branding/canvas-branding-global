@@ -1,0 +1,27 @@
+
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Beginning the install phase...
+      - npm install -g uglify-js
+      - npm install -g uglifycss
+      - rm -rf build
+      - mkdir build
+  build:
+    commands:
+      - echo Beginning the build phase...
+      - cat js/*.js > build/theme.js
+      - uglifyjs build/theme.js > build/theme.min.js
+      - cat css/*.css > build/theme.css
+      - uglifycss build/theme.css > build/theme.min.css
+
+artifacts:
+  files:
+    - build/theme.js
+    - build/theme.min.js
+    - build/theme.css
+    - build/theme.min.css
+
+  discard-paths: yes
