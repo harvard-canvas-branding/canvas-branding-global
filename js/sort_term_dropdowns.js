@@ -1,43 +1,14 @@
-
 function sortTermDropdown(){
-  var termSelect = $('select[name="enrollment_term_id"]');
-  var selectedOption = $(termSelect).val();
-  var termSelectList = $('option', termSelect);
-  var re_letter = /^[A-Za-z]/;
-  var re_number = /^[0-9]/;
+  var optGroupList = $('select').first().find('optgroup');
 
-  var topList = new Array();
-  var middleList = new Array();
-  var bottomList = new Array();
+  for (var i=0; i < optGroupList.length; i++) {
+      var termList = optGroupList.eq(i).find('option');
 
-  for (var i=0; i < termSelectList.length; i++) {
-    if (termSelectList[i].label == 'All Terms') {
-      // this should be the first item in the list
-      topList.unshift(termSelectList[i]);
-    }
-    else if (termSelectList[i].label == 'Ongoing') {
-      // this should be the second item in the list
-      topList.push(termSelectList[i]);
-    }
-    else if (termSelectList[i].label.match(re_letter)) {
-      // all other items that start with a letter will go at the bottom, sorted ascending
-      bottomList.push(termSelectList[i]);
-    }
-    else {
-      // all of the items that start with a number will go below the first two items, sorted descending
-      middleList.push(termSelectList[i]);
-    }
+      termList.sort(function(a,b){
+          return (a.label >= b.label) ? -1 : 1;
+      });
+      optGroupList.eq(i).html(termList);
   }
-
-  var newList = topList.concat(
-    middleList.sort(function(a,b){
-      return (a.label >= b.label) ? -1 : 1;
-    }),
-    bottomList.sort(function(a,b){
-      return (a.label >= b.label) ? 1 : -1;
-    })
-  );
-  $(termSelect).html(newList).val(selectedOption);
 }
 
 function sortTermTable(){
@@ -76,10 +47,16 @@ function sortTermTable(){
 }
 
 $(document).ready(function() {
-  if ($('select[name="enrollment_term_id"]').length > 0) {
-    sortTermDropdown();
-  }
-  if ($('table#terms').length > 0) {
-    sortTermTable();
-  }
+    if ($('table#terms').length > 0) {
+        sortTermTable();
+    }
+});
+
+// Wait until all ajax call have been completed prior to sorting
+$(document).ajaxStop(function () {
+    // If we are on the courses page, sort the terms
+    if ($('[data-automation="courses list"]').length > 0) {
+        sortTermDropdown();
+    }
+
 });
