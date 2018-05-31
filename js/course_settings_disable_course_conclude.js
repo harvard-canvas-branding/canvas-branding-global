@@ -43,7 +43,6 @@ function sortRoleDropdown(){
     var optList = roleSelect.find('option');
 
     optList.sort(function(a,b){
-        console.log(a.label);
         return (a.label >= b.label) ? 1 : -1;
     });
     roleSelect.html(optList);
