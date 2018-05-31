@@ -56,7 +56,6 @@ function initHUGlobal() {
     if (onCourseSettingsPage) {
         if (isConcludeButtonPresent()) {
             disableCourseConcludeButton();
-            addCourseConcludeButtonDisabledMessage();
         } else {
             disableCourseUnconcludeButton();
             addCourseUnconcludeButtonDisabledMessage();
