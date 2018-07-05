@@ -48,11 +48,16 @@ function sortRoleDropdown(){
     roleSelect.html(optList);
 }
 
+function disableCopyCourseButton() {
+    $('a.copy_course_link').addClass('disabled');
+}
+
 function initHUGlobal() {
     var reCourseSettingsPage = /courses\/.+?\/settings/;
     var windowUrl = window.location.pathname;
     var onCourseSettingsPage = (windowUrl.search(reCourseSettingsPage) != -1);
     if (onCourseSettingsPage) {
+        disableCopyCourseButton();
         if (isConcludeButtonPresent()) {
             disableCourseConcludeButton();
         } else {
