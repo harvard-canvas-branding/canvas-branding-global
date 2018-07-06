@@ -38,6 +38,10 @@ function isConcludeButtonPresent(){
     return $("a[class~='Button'][href$='event=conclude']").length > 0;
 }
 
+function isCopyButtonPresent(){
+    return $("a[class~='copy_course_link']").length > 0;
+}
+
 function sortRoleDropdown(){
     var roleSelect = $('select').first();
     var optList = roleSelect.find('option');
@@ -57,7 +61,9 @@ function initHUGlobal() {
     var windowUrl = window.location.pathname;
     var onCourseSettingsPage = (windowUrl.search(reCourseSettingsPage) != -1);
     if (onCourseSettingsPage) {
-        disableCopyCourseButton();
+        if (isCopyButtonPresent()){
+             disableCopyCourseButton();
+        }
         if (isConcludeButtonPresent()) {
             disableCourseConcludeButton();
         } else {
