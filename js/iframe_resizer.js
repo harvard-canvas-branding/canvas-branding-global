@@ -9,15 +9,16 @@
   // messaging to keep iframe size in sync with embedded document size
   ((function init() {
     if (onEditablePage()) {
-      console.log('on an editable page - look for iframes to resize');
-
+      // on an editable page - load the resizer code and listen for a message
+      // from the child document so that we know it's ready to be resized
       var iframeResizerCDN = 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.min.js';
       require([iframeResizerCDN]);
 
       window.addEventListener("message", receiveMessage, false);
       function receiveMessage(event)
       {
-        if (event.origin !== "https://localhost:8000" || event.data !== "resize") {
+        // make sure we have the right event
+        if (event.data !== "ready_for_resize") {
           return;
         }
 
