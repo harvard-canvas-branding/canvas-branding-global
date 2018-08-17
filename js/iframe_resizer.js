@@ -19,7 +19,7 @@
               console.log('resized an iframe');
               // assumes all iframes were added simultaneously
               courseInfoObserver.disconnect();
-            });
+            };
           }
       });
 
