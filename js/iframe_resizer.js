@@ -11,12 +11,14 @@
   // messaging to keep iframe size in sync with embedded document size
   ((function init() {
     if (onEditablePage()) {
+      console.log('on an editable page - look for iframes to resize');
       var courseInfoObserver = new MutationObserver(function (mutations) {
           var $widgets = $('div#content').find('iframe[title="Course Info"]');
           if ($widgets.length > 0) {
             $widgets.iFrameResize();
+            console.log('resized an iframe');
             // assumes all iframes were added simultaneously
-            courseInfoObserver.disconnect();
+            // courseInfoObserver.disconnect();
           }
       });
 
