@@ -13,6 +13,7 @@
     if (onEditablePage()) {
       console.log('on an editable page - look for iframes to resize');
       var courseInfoObserver = new MutationObserver(function (mutations) {
+          console.log(mutations);
           var $widgets = $('div#content').find('iframe[title="Course Info"]');
           if ($widgets.length > 0) {
             $widgets.iFrameResize();
@@ -21,8 +22,6 @@
             // courseInfoObserver.disconnect();
           }
       });
-
-      $('div#content').find('iframe[title="Course Info"]').iFrameResize();
 
       var moConfig = {
         childList: true,
