@@ -22,6 +22,8 @@
           }
       });
 
+      $('div#content').find('iframe[title="Course Info"]').iFrameResize();
+
       var moConfig = {
         childList: true,
         subtree: true
