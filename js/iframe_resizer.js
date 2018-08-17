@@ -18,6 +18,7 @@
       function receiveMessage(event)
       {
         if (event.origin !== "https://localhost:8000" || event.message !== "resize") {
+          console.log('got event from '+event.origin+' with message '+event.message+' - ignoring');
           return;
         }
 
