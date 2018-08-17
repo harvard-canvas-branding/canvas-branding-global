@@ -5,7 +5,7 @@
   }
 
   var iframeResizerCDN = 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.min.js';
-  require(['jquery', iframeResizerCDN]);
+  require([iframeResizerCDN]);
 
   // If we're on a page with the course info iframe, set up bidirectional
   // messaging to keep iframe size in sync with embedded document size
