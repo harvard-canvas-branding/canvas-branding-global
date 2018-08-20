@@ -16,6 +16,17 @@
       function receiveMessage(event)
       {
 
+        // check the origin
+        var valid_origins = [
+        	"https://canvas-course-info.dev.tlt.harvard.edu:443",
+        	"https://canvas-course-info.qa.tlt.harvard.edu:443",
+        	"https://canvas-course-info.tlt.harvard.edu:443"
+        ];
+        if (!valid_origins.includes(event.origin)) {
+          console.log('event origin not valid: '+event.origin);
+          return;
+        }
+
         // make sure we have the right event
         if (event.data.message !== "ready_for_resize") {
           console.log('event message incorrect -- ignoring event');
@@ -27,7 +38,6 @@
         	console.log('event had no height number -- skipping');
         	return;
         }
-
 
         // find the correct frame and resize it
         frames = $('iframe');
