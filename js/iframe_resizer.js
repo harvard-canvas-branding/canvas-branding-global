@@ -5,28 +5,40 @@
   }
 
 
-  // If we're on a page with the course info iframe, set up bidirectional
-  // messaging to keep iframe size in sync with embedded document size
-  ((function init() {
+  // If we're on a page with the course info iframe, listen for a message from
+  // the iframe that will trigger a resize
+ ((function init() {
     if (onEditablePage()) {
       // on an editable page - load the resizer code and listen for a message
       // from the child document so that we know it's ready to be resized
-      var iframeResizerCDN = 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.1/iframeResizer.min.js';
-      require([iframeResizerCDN]);
 
       window.addEventListener("message", receiveMessage, false);
       function receiveMessage(event)
       {
+
         // make sure we have the right event
-        if (event.data !== "ready_for_resize") {
+        if (event.data.message !== "ready_for_resize") {
+          console.log('event message incorrect -- ignoring event');
           return;
         }
 
-        // resize the iframe(s)
-        var widgets = $('div#content').find('iframe[title="Course Info"]');
-        if (widgets.length > 0) {
-          widgets.iFrameResize();
-          console.log('resized the iframe');
+        // make sure we have an integer height
+        if (typeof event.data.height !== 'number') {
+        	console.log('event had no height number -- skipping');
+        	return;
+        }
+
+
+        // find the correct frame and resize it
+        frames = $('iframe');
+        if (frames.length > 0) {
+          for (var i = 0; i < frames.length; i++) {
+            if (frames[i].contentWindow === event.source) {
+              frames[i].style.cssText = '';
+              frames[i].height = event.data.height;
+              break;
+            }
+          }
         }
       }
     }
