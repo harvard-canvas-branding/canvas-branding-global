@@ -45,11 +45,16 @@ function isCopyButtonPresent(){
 function sortRoleDropdown(){
     var roleSelect = $('select').first();
     var optList = roleSelect.find('option');
+    var selected = roleSelect.val();
 
-    optList.sort(function(a,b){
-        return (a.label >= b.label) ? 1 : -1;
-    });
-    roleSelect.html(optList);
+    optList.sort(function(a,b) {
+        if (a.text > b.text) return 1;
+        if (a.text < b.text) return -1;
+        return 0
+    })
+
+    roleSelect.empty().append( optList );
+    roleSelect.val(selected);
 }
 
 function disableCopyCourseButton() {
@@ -72,8 +77,12 @@ function initHUGlobal() {
         }
     }
 
+    // If we are on the courses page, sort the terms
+    if ($('[data-automation="courses list"]').length > 0) {
+        sortTermDropdown();
+    }
     // If we are on the People page, sort the role drop down
-    if ($('[aria-label="Add people"]').length > 0) {
+    else if ($('[aria-label="Add people"]').length > 0) {
         sortRoleDropdown();
     }
 
