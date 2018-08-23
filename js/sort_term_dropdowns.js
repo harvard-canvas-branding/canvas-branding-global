@@ -58,5 +58,8 @@ $(document).ajaxStop(function () {
     if ($('[data-automation="courses list"]').length > 0) {
         sortTermDropdown();
     }
-
+    // If we are on the People page, sort the role drop down
+    else if ($('[aria-label="Add people"]').length > 0) {
+        sortRoleDropdown();
+    }
 });
