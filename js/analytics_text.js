@@ -9,7 +9,7 @@ function addAnalyticsTextBlock() {
 		var guidance_text = '<div id="analytics-guidance" class="tlt-analytics-center-alert-info">' +
 			'	<div class="tlt-analytics-alert-info">' +
 			'		The Faculty Oversight Committee on the Access to Electronic Information provides' +
-			' 		<a href="https://wiki.harvard.edu/confluence/display/canvas/Electronic+Information+in+Canvas" target="_blank">' +
+			' 		<a href="https://harvard.service-now.com/ithelp?id=kb_article&sys_id=dc7fa896db8d170083a2f3f7bf96198f" target="_blank">' +
 			' 		<strong>guidance to faculty</strong></a> on using these analytics.' +
 			'	</div>' +
 			'</div>';
