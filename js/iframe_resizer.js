@@ -20,7 +20,8 @@
         var valid_origins = [
         	"https://canvas-course-info.dev.tlt.harvard.edu:443",
         	"https://canvas-course-info.qa.tlt.harvard.edu:443",
-        	"https://canvas-course-info.tlt.harvard.edu:443"
+          "https://canvas-course-info.tlt.harvard.edu:443",
+          "https://canvas-course-info.local.tlt.harvard.edu:8000"
         ];
         if (!valid_origins.includes(event.origin)) {
           console.log('event origin not valid: '+event.origin);
