@@ -23,5 +23,6 @@ artifacts:
     - build/theme.min.js
     - build/theme.css
     - build/theme.min.css
+  name: build-$(date +%Y-%m-%d-%H-%M-%S)
 
   discard-paths: yes
