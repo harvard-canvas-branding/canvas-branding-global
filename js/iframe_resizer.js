@@ -22,6 +22,7 @@
         	"https://canvas-course-info.qa.tlt.harvard.edu",
           "https://canvas-course-info.tlt.harvard.edu",
           "https://canvas-course-info.local.tlt.harvard.edu",
+          "https://canvas-course-info.stage.tlt.harvard.edu",
           "https://local.tlt.harvard.edu:8000"
         ];
         if (!valid_origins.includes(event.origin)) {
