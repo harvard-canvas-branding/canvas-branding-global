@@ -49,6 +49,7 @@
             if (frames[i].contentWindow === event.source) {
               frames[i].style.cssText = '';
               frames[i].height = event.data.height;
+              frames[i].attr('width', '100%');
               break;
             }
           }
