@@ -16,6 +16,10 @@ phases:
       - uglifyjs build/theme.js > build/theme.min.js
       - cat css/*.css > build/theme.css
       - uglifycss build/theme.css > build/theme.min.css
+      - echo "\n\n// $CODEBUILD_SOURCE_VERSION $CODEBUILD_WEBHOOK_HEAD_REF $CODEBUILD_WEBHOOK_TRIGGER\n\n" >> build/theme.js
+      - echo "\n\n// $CODEBUILD_SOURCE_VERSION $CODEBUILD_WEBHOOK_HEAD_REF $CODEBUILD_WEBHOOK_TRIGGER\n\n" >> build/theme.min.js
+      - echo "\n\n/* $CODEBUILD_SOURCE_VERSION $CODEBUILD_WEBHOOK_HEAD_REF $CODEBUILD_WEBHOOK_TRIGGER */\n\n" >> build/theme.css
+      - echo "\n\n/* $CODEBUILD_SOURCE_VERSION $CODEBUILD_WEBHOOK_HEAD_REF $CODEBUILD_WEBHOOK_TRIGGER */\n\n" >> build/theme.min.css
 
 artifacts:
   files:
