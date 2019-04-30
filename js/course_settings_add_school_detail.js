@@ -81,10 +81,9 @@ function fethcAccountInfo() {
             .then(fetchAccountParents)
             .then(displayAccounts)
             .catch(handleError);
-    }
     } else {
         var msg = "Please run this on a Canvas Course Settings page.";
-        console. log(msg);
+        console.log(msg);
     }
 }
 
