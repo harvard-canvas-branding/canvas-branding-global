@@ -59,7 +59,6 @@ function annotatePage(text, style) {
 
 function displayAccounts(accounts) {
     var text = getAccountsPath(accounts);
-    // console.log(accounts);
     annotatePage("Account: " + text) || alert(text);
     return accounts;
 }
@@ -75,7 +74,6 @@ function fethcAccountInfo() {
     var match = window.location.pathname.match(/^\/courses\/(\d+)/);
     var course_id = (match ? match[1] : null);
     if (course_id) {
-        // console.log("Script executing...");
         fetchCourse(course_id)
             .then(fetchCourseAccount)
             .then(fetchAccountParents)
