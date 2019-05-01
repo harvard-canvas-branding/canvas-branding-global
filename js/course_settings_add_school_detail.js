@@ -42,7 +42,7 @@ function getAccountsPath(accounts) {
 function annotatePage(text, style) {
     style = style || {};
     style.color = style.color || "#000";
-    style.backgroundColor = style.backgroundColor || "#fff3cd";
+    style.backgroundColor = style.backgroundColor || "#ddd";
     var span, el = document.getElementById("course_account_id");
     if (el) {
         span = document.createElement("span");
@@ -59,8 +59,8 @@ function annotatePage(text, style) {
 
 function displayAccounts(accounts) {
     var text = getAccountsPath(accounts);
-    console.log(accounts);
-    annotatePage("Accounts: " + text) || alert(text);
+    // console.log(accounts);
+    annotatePage("Account: " + text) || alert(text);
     return accounts;
 }
 
@@ -75,7 +75,7 @@ function fethcAccountInfo() {
     var match = window.location.pathname.match(/^\/courses\/(\d+)/);
     var course_id = (match ? match[1] : null);
     if (course_id) {
-        console.log("Script executing...");
+        // console.log("Script executing...");
         fetchCourse(course_id)
             .then(fetchCourseAccount)
             .then(fetchAccountParents)
