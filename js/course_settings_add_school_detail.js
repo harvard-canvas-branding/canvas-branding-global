@@ -70,7 +70,7 @@ function handleError(errorObject) {
     return errorObject;
 }
 
-function fethcAccountInfo() {
+function fetchAccountInfo() {
     var match = window.location.pathname.match(/^\/courses\/(\d+)/);
     var course_id = (match ? match[1] : null);
     if (course_id) {
@@ -91,7 +91,7 @@ function initAddSchoolDetail() {
   var onCourseSettingsPage = (windowUrl.search(reCourseSettingsPage) != -1);
 
   if (onCourseSettingsPage) {
-    fethcAccountInfo();
+    fetchAccountInfo();
   }
 }
 
