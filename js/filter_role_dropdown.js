@@ -4,7 +4,7 @@ function addSelectListHandler(mutations, observer) {
   const roleList = document.getElementsByName('enrollment_role_id').item(0);
   if (!roleList && typeof observer === 'undefined') {
     console.log('list is not present; adding a mutation observer to watch for it');
-    const obs = new MutationObserver(checkRoleList);
+    const obs = new MutationObserver(addSelectListHandler);
     obs.observe(document.body, {
       'childList' : true
     });
