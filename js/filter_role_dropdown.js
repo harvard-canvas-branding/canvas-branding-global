@@ -1,7 +1,7 @@
 
 function addSelectListHandler(mutations, observer) {
   console.log('addSelectListHandler called');
-  const roleList = document.getElementsByName('enrollment_role_id').item(0);
+  var roleList = document.getElementsByName('enrollment_role_id').item(0);
   if (!roleList && typeof observer === 'undefined') {
     console.log('list is not present; adding a mutation observer to watch for it');
     const obs = new MutationObserver(addSelectListHandler);
@@ -14,7 +14,7 @@ function addSelectListHandler(mutations, observer) {
       console.log('disconnecting the observer');
       observer.disconnect();
     }
-    console.log(`roleLists: ${roleList}`);
+    console.log(`roleList: ${roleList}`);
     console.log(`adding the handler to ${roleList}`);
     roleList.onfocus = function() {
       console.log('in handler');
