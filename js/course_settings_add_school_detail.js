@@ -66,7 +66,6 @@ function displayAccounts(accounts) {
 function handleError(errorObject) {
     var errorText = "Error: " + errorObject.message;
     console.log(errorObject);
-    annotatePage(errorText, {color: "#721c24", backgroundColor: "#f8d7da"}) || alert(errorText);
     return errorObject;
 }
 

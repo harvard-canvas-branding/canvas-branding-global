@@ -5,7 +5,6 @@ phases:
   install:
     commands:
       - echo Beginning the install phase...
-      - npm install -g uglifycss
       - npm install -g terser
       - rm -rf build
       - mkdir build
