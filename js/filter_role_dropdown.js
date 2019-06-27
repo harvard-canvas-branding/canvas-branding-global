@@ -1,6 +1,13 @@
 
 function addSelectListHandler(mutations, observer) {
   console.log('addSelectListHandler called');
+  console.log(`mutations: ${mutations}`);
+  if (mutations) {
+    mutations.forEach(function(element) {
+      console.log(`mutation type: ${element.type}`);
+      console.log(`mutation target: ${element.target}`);
+    });
+  }
   var roleList = document.getElementsByName('enrollment_role_id').item(0);
   if (!roleList && typeof observer === 'undefined') {
     console.log('list is not present; adding a mutation observer to watch for it');
