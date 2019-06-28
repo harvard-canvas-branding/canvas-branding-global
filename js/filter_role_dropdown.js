@@ -1,19 +1,11 @@
 
 function addSelectListHandler(mutations, observer) {
-  console.log('addSelectListHandler called');
-  console.log(`mutations: ${mutations}`);
-  if (mutations) {
-    mutations.forEach(function(element) {
-      console.log(`mutation type: ${element.type}`);
-      console.log(`mutation target: ${element.target}`);
-    });
-  }
-  var roleList = document.getElementsByName('enrollment_role_id').item(0);
+  const roleList = document.getElementsByName('enrollment_role_id').item(0);
   if (!roleList && typeof observer === 'undefined') {
-    console.log('list is not present; adding a mutation observer to watch for it');
     const obs = new MutationObserver(addSelectListHandler);
     obs.observe(document.body, {
-      'childList' : true
+      'childList' : true,
+      'subtree' : true
     });
   }
   if (roleList) {
@@ -21,18 +13,8 @@ function addSelectListHandler(mutations, observer) {
       console.log('disconnecting the observer');
       observer.disconnect();
     }
-    console.log(`roleList: ${roleList}`);
-    console.log(`adding the handler to ${roleList}`);
     roleList.onfocus = function() {
-      console.log('in handler');
       $("select[name='enrollment_role_id'] option:contains('(0)')").remove();
-
-      // for(var i = 0; i < this.options.length; i++) {
-      //   var opt = this.options[i];
-      //   console.log(`removing ${opt.label}`);
-      //   console.log(`${typeof(opt)}`);
-      //   this.remove(i);
-      // }
     }
 
   }
@@ -53,27 +35,7 @@ $(document).ready(function(e) {
   }
 
   if (onCoursePeoplePage) {
-    // Remove options with 0 enrollments from the role dropdown on the People page
-    // $("select[name='enrollment_role_id'] option:contains('(0)')").remove();
-
     // add a handler to the dropdown element
     addSelectListHandler();
-
-    // var targetNode = document.getElementsByName('enrollment_role_id')[0];
-    // var config = { childList: true, subtree: true };
-    // var callback = function(mutationsList, observer) {
-    //   for (var mutation of mutationsList) {
-    //     if (mutation.type == 'childList') {
-    //       console.log('a child node has been added or removed');
-    //       newNodes = mutation.addedNodes;
-    //       for (var n of newNodes) {
-    //         console.log(n.label)
-    //       }
-    //     }
-    //   }
-    // }
-    // var observer = new MutationObserver(callback);
-    // observer.observe(targetNode, config);
-
   }
 });
