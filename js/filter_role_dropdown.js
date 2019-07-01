@@ -10,15 +10,12 @@ function addSelectListHandler(mutations, observer) {
   }
   if (roleList) {
     if (typeof observer !== 'undefined') {
-      console.log('disconnecting the observer');
       observer.disconnect();
     }
     roleList.onfocus = function() {
       $("select[name='enrollment_role_id'] option:contains('(0)')").remove();
     }
-
   }
-  console.log('done');
 }
 
 $(document).ready(function(e) {
