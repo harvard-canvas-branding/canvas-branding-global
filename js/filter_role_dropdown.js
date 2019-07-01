@@ -35,7 +35,8 @@ $(document).ready(function(e) {
   }
 
   if (onCoursePeoplePage) {
-    // add a handler to the dropdown element
+    // add a handler to the role dropdown element
+    // that will filter the roles onfocus
     addSelectListHandler();
   }
 });
