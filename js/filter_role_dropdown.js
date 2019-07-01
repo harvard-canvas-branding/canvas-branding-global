@@ -1,3 +1,23 @@
+
+function addSelectListHandler(mutations, observer) {
+  const roleList = document.getElementsByName('enrollment_role_id').item(0);
+  if (!roleList && typeof observer === 'undefined') {
+    const obs = new MutationObserver(addSelectListHandler);
+    obs.observe(document.body, {
+      'childList' : true,
+      'subtree' : true
+    });
+  }
+  if (roleList) {
+    if (typeof observer !== 'undefined') {
+      observer.disconnect();
+    }
+    roleList.onfocus = function() {
+      $("select[name='enrollment_role_id'] option:contains('(0)')").remove();
+    }
+  }
+}
+
 $(document).ready(function(e) {
 
   var reCourseSettingsPage = /courses\/.+?\/settings/;
@@ -12,7 +32,8 @@ $(document).ready(function(e) {
   }
 
   if (onCoursePeoplePage) {
-    // Remove options with 0 enrollments from the role dropdown on the People page
-    $("select[name='enrollment_role_id'] option:contains('(0)')").remove();
+    // add a handler to the role dropdown element
+    // that will filter the roles onfocus
+    addSelectListHandler();
   }
 });
