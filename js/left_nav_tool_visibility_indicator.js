@@ -11,18 +11,16 @@ var huToolVisibilityRestricted = [
 
 function huFuzzyVisUpdate(tool){
   return $("div[id='left-side'] a[class^='context_external_tool']:contains('"+ tool + "')")
-    .append('<i class="nav-icon icon-off" aria-hidden="true" role="presentation"></i>')
-    // .parent().addClass('section-tab-hidden');
+    .append('<i class="nav-icon icon-off" title="Not visible to students"  aria-hidden="true" role="presentation"></i>')
 }
 
 function huExactVisUpdate(tool){
   return $("div[id='left-side'] a[class^='context_external_tool']")
     .filter(function(){ return $(this).text() === tool })
-    .append('<i class="nav-icon icon-off" aria-hidden="true" role="presentation"></i>')
-    // .parent().addClass('section-tab-hidden');
+    .append('<i class="nav-icon icon-off"  title="Not visible to students" aria-hidden="true" role="presentation"></i>')
 }
 
-
+  
 /*
  Changes the link style of a specified list of custom tools in the left-hand nav
   to indicate they are not visible to students (current Canvas behavior is to show
