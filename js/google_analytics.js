@@ -24,5 +24,6 @@ if (window.ga && ga.loaded) {
   }
   catch(err) {
     // do nothing
+    console.log('huTracker failed');
   }
 }
