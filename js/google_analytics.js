@@ -1,7 +1,8 @@
 
-$(document).ajaxStop(function(e) {
+$(document).ready(function(e) {
 
-  if (window.ga && ga.loaded) {
+  if (window.ga) {
+    console.log('ga loaded: ' + ga.loaded);
     try {
       ga('create', 'UA-49649810-4', 'auto', 'huTracker');
       ga('huTracker.set', 'anonymizeIp', true);
@@ -30,7 +31,7 @@ $(document).ajaxStop(function(e) {
       console.log('huTracker failed');
     }
   } else {
-    console.log('window.ga was not available or ga was not loaded');
+    console.log('window.ga was not available');
   }
 
 });
