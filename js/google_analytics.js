@@ -1,5 +1,5 @@
 
-$(document).ready(function(e) {
+$(document).ajaxStop(function(e) {
 
   if (window.ga && ga.loaded) {
     try {
