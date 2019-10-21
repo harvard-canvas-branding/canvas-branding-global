@@ -29,6 +29,8 @@ $(document).ready(function(e) {
       // do nothing
       console.log('huTracker failed');
     }
+  } else {
+    console.log('window.ga was not available or ga was not loaded');
   }
 
 });
