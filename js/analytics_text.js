@@ -23,7 +23,6 @@ function initAnalyticsTextBlock(){
 
 	if (document.title === "New Analytics" ) {
 		// place the text block at the top of the #content div
-		console.log("On the new analyics page; going to add the message");
 		$('#content').prepend(guidance_text);
 	}
 	else {
