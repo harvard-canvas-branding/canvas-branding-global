@@ -4,7 +4,7 @@ function initAddPronounText() {
   var onProfileSettingsPage = (windowUrl.search(/\/profile\/settings/) != -1);
 
   if (onProfileSettingsPage) {
-    textSpan = $( "#pronouns" ).parent().children().last();
+    var textSpan = $( "#pronouns" ).parent().children().last();
 
     textSpan.html("\
     <br/>This pronoun will appear after your name when enabled.\
