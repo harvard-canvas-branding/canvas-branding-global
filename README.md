@@ -1,16 +1,8 @@
 # canvas-branding
 Top-level Canvas theme files.
 
-## Manually building js/css files:
+## Build
 
-### prerequisites:
-1. Make sure you have node installed (e.g. via homebrew)
-2. Install uglify-js: `sudo npm install uglify-js --global`
-3. Install uglifycss: `sudo npm install uglifycss --global`
+Minified and un-minified versions of the combined CSS and JS files are automatically produced by a CodeBuild project when changes are made to this repository.
 
-### process:
-1. Remove old global.*
-2. `cat js/*.js > global.js`
-3. `uglifyjs global.js > global.min.js`
-4. `cat css/*.css > global.css`
-5. `uglifycss global.css > global.min.css`
+The resulting files can be found in `s3://at-build-artifacts/canvas-global-branding`.
