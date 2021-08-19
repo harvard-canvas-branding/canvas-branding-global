@@ -35,7 +35,7 @@ function handleResponse(response) {
 
 function getAccountsPath(accounts) {
     return accounts.slice().reverse().map(function(account) {
-        return '<a href="'+window.location.origin+'/accounts/'+account.id+'">'+account.name+'</a>';
+        return '<a href="/accounts/'+account.id+'">'+account.name+'</a>';
     }).join(" > ");
 }
 
