@@ -35,7 +35,7 @@ function handleResponse(response) {
 
 function getAccountsPath(accounts) {
     return accounts.slice().reverse().map(function(account) {
-        return account.name;
+        return '<a href="/accounts/'+account.id+'">'+account.name+'</a>';
     }).join(" > ");
 }
 
@@ -51,7 +51,7 @@ function annotatePage(text, style) {
         span.style.backgroundColor = style.backgroundColor;
         span.style.padding = ".5em";
         span.style.marginBottom = "1em";
-        span.appendChild(document.createTextNode(text));
+        span.innerHTML=text;
         el.parentNode.appendChild(span);
     }
     return el;
