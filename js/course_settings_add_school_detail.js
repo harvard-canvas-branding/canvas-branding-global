@@ -27,15 +27,38 @@ function fetchAccountParents(account) {
 }
 
 function handleResponse(response) {
-    if(response.ok) {
-        return response.json();
-    }
-    throw new Error('API request ' + response.url + ' failed with status code ' + response.status);
+    if (response.ok) return response.json();
+
+    // if the request is unauthorized for an account API call, try to provide a useful fallback
+    const accountInfo = getFallbackAccountInfo(response.url);
+    if (accountInfo !== null) return accountInfo;
+
+    // this is either not an account fetch error, or it's an unhandled account fetch error,
+    // so raise it as we're not expecting it
+    const msg = 'API request ' + response.url + ' failed with status code ' + response.status;
+    throw new Error(msg);
+}
+
+function getFallbackAccountInfo(url) {
+    const reAccountUrl = /\/api\/v1\/accounts\/(?<accountId>\d+)$/;
+    const match = reAccountUrl.exec(url);
+    const accountId = match?.groups?.accountId;
+
+    if (!accountId) return null; // this is not an account API call
+
+    /* This user does not have access to the account `accountId`,
+        and will likely be unable to fetch any parent accounts,
+        so simply show the root account `name`; without an `id`
+        this node should be rendered as text, not a link, and
+        without a `parent_account_id` there will be no more
+        account API fetches after this one.
+    */
+    return {name: 'Harvard University'};
 }
 
 function getAccountsPath(accounts) {
     return accounts.slice().reverse().map(function(account) {
-        return '<a href="/accounts/'+account.id+'">'+account.name+'</a>';
+        return account.id ? '<a href="/accounts/'+account.id+'">'+account.name+'</a>' : account.name;
     }).join(" > ");
 }
 
@@ -43,16 +66,26 @@ function annotatePage(text, style) {
     style = style || {};
     style.color = style.color || "#000";
     style.backgroundColor = style.backgroundColor || "#ddd";
-    var span, el = document.getElementById("course_account_id");
+    var div, el = document.getElementById("course_account_id");
     if (el) {
-        span = document.createElement("span");
-        span.style.display = "block";
-        span.style.color = style.color;
-        span.style.backgroundColor = style.backgroundColor;
-        span.style.padding = ".5em";
-        span.style.marginBottom = "1em";
-        span.innerHTML=text;
-        el.parentNode.appendChild(span);
+        div = document.createElement("div");
+        div.style.display = "block";
+        div.style.color = style.color;
+        div.style.backgroundColor = style.backgroundColor;
+        div.style.padding = ".5em";
+        div.style.marginBottom = "1em";
+
+        // if the #course_account_id element is a <span>, the user cannot
+        // edit the course; in this case we need extra padding above the
+        // new <div> to give it more visual room
+        if (el.tagName === "SPAN") div.style.marginTop = "1em";
+
+        div.innerHTML=text;
+        el.parentNode.appendChild(div);
+
+        // ensure that the row label is aligned with the top of the row (similar to
+        // e.g. "Participation" row) not the default center (e.g. "SIS ID" row)
+        el.closest(".form-row").style.alignItems = "flex-start";
     }
     return el;
 }
@@ -64,16 +97,14 @@ function displayAccounts(accounts) {
 }
 
 function handleError(errorObject) {
-    var errorText = "Error: " + errorObject.message;
     console.log(errorObject);
     return errorObject;
 }
 
 function fetchAccountInfo() {
-    var match = window.location.pathname.match(/^\/courses\/(\d+)/);
-    var course_id = (match ? match[1] : null);
-    if (course_id) {
-        fetchCourse(course_id)
+    const courseId = ENV['COURSE_ID'] || null;
+    if (courseId) {
+        fetchCourse(courseId)
             .then(fetchCourseAccount)
             .then(fetchAccountParents)
             .then(displayAccounts)
