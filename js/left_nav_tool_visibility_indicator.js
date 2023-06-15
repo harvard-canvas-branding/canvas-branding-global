@@ -7,6 +7,7 @@ var huToolVisibilityRestricted = [
   "Course Emailer",
   "Import iSites Content",
   "Manage Course",
+  "HUIT Accessibility"
 ];
 function huFuzzyVisUpdate(tool){
 	var element = $("div[id='left-side'] a[class^='context_external_tool']:contains('"+ tool + "')");
