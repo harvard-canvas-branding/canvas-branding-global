@@ -1,0 +1,10 @@
+/* CSS for sticky footer. */
+#content-wrapper {
+    position: relative;
+    min-height: 100vh;
+}
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
