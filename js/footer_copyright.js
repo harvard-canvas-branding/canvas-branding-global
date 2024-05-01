@@ -6,6 +6,11 @@ $(document).ready(function (e) {
    * lines
    */
   function addFooterContent() {
+    // Do not add footer content if the user is on the OAuth2 login page.
+    if (window.location.href.match(/.*\/login\/oauth2\//)) {
+      return;
+    }
+
     const copyYear = new Date().getFullYear();
 
     const harvardCopy =
