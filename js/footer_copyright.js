@@ -11,6 +11,14 @@ $(document).ready(function (e) {
       return;
     }
 
+    if (window.location.href.match(/\/courses\/\d+\/settings.*/)) {
+      return;
+    }
+
+    if (window.location.href.match(/\/accounts\/\d+\/settings.*/)) {
+      return;
+    }
+
     const copyYear = new Date().getFullYear();
 
     const harvardCopy =
