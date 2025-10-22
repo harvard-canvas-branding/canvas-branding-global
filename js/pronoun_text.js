@@ -15,10 +15,7 @@ function initAddPronounText() {
     language is constantly evolving and members of our community \
     should be able to be called and describe their identity \
     however they choose, so we are working to enable that option \
-    within Canvas. To learn more about gender, identity, \
-    or pronouns and to provide feedback, visit: \
-    <a href=\"https://dib.harvard.edu/gender-pronouns\">\
-    https://dib.harvard.edu/gender-pronouns</a>.\
+    within Canvas.\
     ");
 
     $( "#pronouns" ).parent().parent().children("th").css("vertical-align", "top");
