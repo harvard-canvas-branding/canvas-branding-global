@@ -7,6 +7,6 @@
     position: fixed;
     bottom: 0;
     left: 25%;                   /* offset from the left to clear the left navigation panel */
-    width: 75vw;                 /* fill the remaining viewport width */
+    width: 50vw;                 /* span the middle ~50%, leaving ~25% space on the right */
     right: auto;                 /* unset any right-anchoring Canvas may apply */
 }
