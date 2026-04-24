@@ -6,6 +6,6 @@
     position: fixed;
     bottom: 0;
     right: 0;        /* anchor to the right instead of left */
-    width: 50vw;     /* half the viewport width */
+    width: 80vw;     /* 80% of the viewport width */
     left: auto;      /* unset the left positioning */
 }
