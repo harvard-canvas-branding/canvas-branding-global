@@ -1,11 +1,12 @@
-/* Shift the beta/test environment warning footer to the right half of the screen.
- * This prevents it from overlapping the left navigation panel,
- * so users do not need to dismiss it on every page load.
+/* Reposition the beta/test environment warning footer to avoid overlapping the left navigation panel.
+ * Canvas displays #fixed_bottom as a full-width fixed bar at the bottom of the page on beta/test
+ * instances. By offsetting it from the left, it no longer covers the left navigation, so users do
+ * not need to dismiss it on every page load.
  */
 #fixed_bottom {
     position: fixed;
     bottom: 0;
-    right: 0;        /* anchor to the right instead of left */
-    width: 80vw;     /* 80% of the viewport width */
-    left: auto;      /* unset the left positioning */
+    left: 25%;                   /* offset from the left to clear the left navigation panel */
+    width: 75vw;                 /* fill the remaining viewport width */
+    right: auto;                 /* unset any right-anchoring Canvas may apply */
 }
